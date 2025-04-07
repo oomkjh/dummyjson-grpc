@@ -1,6 +1,6 @@
 import { Controller } from '@nestjs/common';
-import { AppService } from './app.service';
 import { GrpcMethod } from '@nestjs/microservices';
+import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
@@ -8,8 +8,6 @@ export class AppController {
 
   @GrpcMethod('UsersService', 'GetTransformedUsers')
   async getTransformedUsers(_: any, __: any) {
-    return {
-      departments: await this.appService.transformUserData(),
-    };
+    return { departments: await this.appService.transformUserData() };
   }
 }

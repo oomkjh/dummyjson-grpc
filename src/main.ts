@@ -17,6 +17,5 @@ async function bootstrap() {
   );
 
   await app.listen();
-  console.log('🚀 gRPC service running at localhost:50051');
 }
 bootstrap();

@@ -3,16 +3,16 @@ syntax = "proto3";
 package users;
 
 service UsersService {
-  rpc GetTransformedUsers (Empty) returns (UserResponse);
+  rpc GetTransformedUsers(Empty) returns (UserSummaryResponse);
 }
 
 message Empty {}
 
-message UserResponse {
-  map<string, DepartmentData> departments = 1;
+message UserSummaryResponse {
+  map<string, DepartmentSummary> departments = 1;
 }
 
-message DepartmentData {
+message DepartmentSummary {
   int32 male = 1;
   int32 female = 2;
   string ageRange = 3;
